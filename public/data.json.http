@@ -1,0 +1,4 @@
+GET https://codefellows.github.io/code-301-guide/curriculum/class-02/lab/assets/data.json
+Accept: application/json
+
+###
