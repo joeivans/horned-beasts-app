@@ -4,8 +4,8 @@ import Image from 'react-bootstrap/Image';
 
 
 export class HornedBeasts extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       favoriteCount: 0
@@ -14,7 +14,7 @@ export class HornedBeasts extends React.Component {
 
   favoriteClickHandler = () =>
     this.setState({
-      favoriteCount: ++this.state.favoriteCount,
+      favoriteCount: this.state.favoriteCount + 1,
     });
 
   renderFavorite() {
