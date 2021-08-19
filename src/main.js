@@ -2,17 +2,11 @@ import * as PropTypes from 'prop-types';
 import React from 'react';
 import Row from 'react-bootstrap/Row';
 import {BeastColumn} from './beastColumn';
-import beasts from './data.json';
 
 
 BeastColumn.propTypes = {index: PropTypes.number};
 
-/**
- *
- * @returns {JSX.Element}
- * @constructor
- */
-export function Main() {
+export function Main(props) {
   'use strict';
 
   return (
@@ -21,31 +15,26 @@ export function Main() {
     </main>
   );
 
-  /**
-   *
-   * @param {number} columns
-   * @returns {JSX.Element[]}
-   */
   function beastMaker(columns = 3) {
     const result = [];
 
-    const remainder = beasts.length % 3;
+    const remainder = props.beasts.length % 3;
     console.log(remainder);
 
-    for (let i = 0; i < beasts.length - remainder; i += columns) {
+    for (let i = 0; i < props.beasts.length - remainder; i += columns) {
       result.push(
         <Row>
-          <BeastColumn index={i}/>
-          <BeastColumn index={i + 1}/>
-          <BeastColumn index={i + 2}/>
+          <BeastColumn beast={props.beasts[i]}/>
+          <BeastColumn beast={props.beasts[i + 1]}/>s
+          <BeastColumn beast={props.beasts[i + 2]}/>s
         </Row>);
     }
 
-    const i = beasts.length - remainder;
+    const i = props.beasts.length - remainder;
     result.push(
       <Row>
-        <BeastColumn index={i}/>
-        <BeastColumn index={i + 1}/>
+        <BeastColumn beast={props.beasts[i]}/>
+        <BeastColumn beast={props.beasts[i + 1]}/>
       </Row>);
 
     return result;
