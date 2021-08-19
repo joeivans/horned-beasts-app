@@ -4,10 +4,13 @@ import {HornedBeasts} from './hornedBeasts';
 
 
 export function BeastColumn(props) {
-  return <Col>
-    <HornedBeasts description={props.beast.description}
-                  title={props.beast.title}
-                  imageUrl={props.beast.image_url}
-                  altText={props.beast.keyword}/>
-  </Col>;
+  'use strict';
+
+  return (
+    <Col class="col-md-4">
+      <HornedBeasts description={props.beast.description}
+                    title={props.beast.title}
+                    imageUrl={props.beast.image_url}
+                    altText={props.beast.keyword}/>
+    </Col>);
 }

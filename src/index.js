@@ -6,7 +6,10 @@ import {Footer} from './footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import beasts from './data.json';
 
+
 function Index() {
+  'use strict';
+
   return (
     <>
       <Header/>

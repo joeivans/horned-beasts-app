@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 
 
@@ -22,8 +21,9 @@ export class HornedBeasts extends React.Component {
   }
 
   render() {
+    'use strict';
     return (
-      <Container>
+      <>
         <h2>{this.props.title}</h2>
         <Image thumbnail onClick={this.favoriteClickHandler}
                title={this.props.title}
@@ -31,7 +31,7 @@ export class HornedBeasts extends React.Component {
                alt={this.props.altText}/>
         <p>{this.props.description}</p>
         <span>&#9829; {this.renderFavorite()}</span>
-      </Container>
+      </>
     );
   }
 }
