@@ -63,12 +63,14 @@ export class Main extends React.Component {
         />
         <Container>
           <Row>
-            {this.props.beasts.map(beast =>
-              <BeastColumn
-                key={beast.image_url}
-                beast={beast}
-                handleModalClick={this.handleModalClick}
-              />)
+            {this.props.beasts
+              .filter(beast => this.filterBeasts(beast))
+              .map(beast =>
+                <BeastColumn
+                  key={beast.image_url}
+                  beast={beast}
+                  handleModalClick={this.handleModalClick}
+                />)
             }
           </Row>
         </Container>
