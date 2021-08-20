@@ -8,7 +8,7 @@ export default function BeastModalComponent(props) {
            show={props.showModal}
            onHide={props.handleModalClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Modal heading</Modal.Title>
+        <Modal.Title>{props.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Container>

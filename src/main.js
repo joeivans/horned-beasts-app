@@ -11,7 +11,8 @@ export class Main extends React.Component {
 
     this.state = {
       showModal: false,
-      imageUrl: '',
+      modalImageUrl: '',
+      modalTitle: '',
     };
   }
 
@@ -19,6 +20,7 @@ export class Main extends React.Component {
     this.setState({
       showModal: !this.state.showModal,
       imageUrl: event.target.src,
+      modalTitle: event.target.title,
     });
   };
 
@@ -35,6 +37,7 @@ export class Main extends React.Component {
           showModal={this.state.showModal}
           handleModalClose={this.handleModalClose}
           imageUrl={this.state.imageUrl}
+          title={this.state.modalTitle}
         />
         <Container>
           <Row>
