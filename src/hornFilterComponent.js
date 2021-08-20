@@ -2,11 +2,19 @@ import {Container, Navbar} from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
 
-export default function HornFilterComponent() {
+// REVIEW make sure props is declared as an argument
+export default function HornFilterComponent(props) {
   'use strict';
 
+  // REVIEW Could this move to main?
+  // - Filter component's selection handling is an implementation detail
   function handleChange(event) {
-    alert(event.target.value);
+    props.onChange(event.target.value);
+
+    /* REVIEW Can't return value because no consumer
+       if (event.target.value === '1'){return 1;}
+       else (event.target.value === '*'){}
+    */
   }
 
   return (
