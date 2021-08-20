@@ -1,37 +1,42 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Image from 'react-bootstrap/Image';
+import {Button, Card} from 'react-bootstrap';
 
 
 export class HornedBeasts extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       favoriteCount: 0
     };
   }
 
-  favoriteClickHandler = () =>
-    this.setState({
-      favoriteCount: ++this.state.favoriteCount,
-    });
+  handleModalClick = (event) => {
+    this.props.handleModalClick(event);
+  };
 
-  renderFavorite() {
-    return this.state.favoriteCount;
-  }
+  handleFavoriteClick = () =>
+    this.setState({
+      favoriteCount: this.state.favoriteCount + 1,
+    });
 
   render() {
     return (
-      <Container>
-        <h2>{this.props.title}</h2>
-        <Image thumbnail onClick={this.favoriteClickHandler}
-               title={this.props.title}
-               src={this.props.imageUrl}
-               alt={this.props.altText}/>
-        <p>{this.props.description}</p>
-        <span>&#9829; {this.renderFavorite()}</span>
-      </Container>
+      <Card style={{width: '18rem'}}>
+        <Card.Img
+          src={this.props.imageUrl}
+          title={this.props.title}
+          alt={this.props.altText}
+          variant="top"
+          onClick={this.handleModalClick}
+        />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+          <Button variant="primary"
+                  onClick={this.handleFavoriteClick}><span>&#9829; Likes: {this.state.favoriteCount}</span></Button>
+        </Card.Body>
+      </Card>
     );
   }
 }
