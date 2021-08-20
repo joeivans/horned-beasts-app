@@ -33,6 +33,7 @@ export class HornedBeasts extends React.Component {
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
+          <Card.Text>This beast has {this.props.horns} horns</Card.Text>
           <Button variant="primary"
                   onClick={this.handleFavoriteClick}><span>&#9829; Likes: {this.state.favoriteCount}</span></Button>
         </Card.Body>
