@@ -1,26 +1,12 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Header} from './header';
-import {Main} from './main';
-import {Footer} from './footer';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import beasts from './data.json';
+import {App} from './app';
 
-
-function Index() {
-  'use strict';
-
-  return (
-    <>
-      <Header/>
-      <Main beasts={beasts}/>
-      <Footer/>
-    </>
-  );
-
-}
 
 ReactDOM.render(
-  <Index/>,
+  <React.StrictMode>
+    <App/>
+  </React.StrictMode>,
   document.getElementById('root')
 );

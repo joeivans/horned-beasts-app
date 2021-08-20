@@ -2,18 +2,52 @@ import React from 'react';
 import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import {BeastColumn} from './beastColumn';
+import BeastModalComponent from './beastModalComponent';
 
 
-export function Main(props) {
-  'use strict';
+export class Main extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <main>
-      <Container>
-        <Row>
-          {props.beasts.map(beast => <BeastColumn beast={beast}/>)}
-        </Row>
-      </Container>
-    </main>
-  );
+    this.state = {
+      showModal: false,
+      imageUrl: '',
+    };
+  }
+
+  handleModalClick = (event) => {
+    this.setState({
+      showModal: !this.state.showModal,
+      imageUrl: event.target.src,
+    });
+  };
+
+  handleModalClose = () => {
+    this.setState({
+      showModal: !this.state.showModal,
+    });
+  };
+
+  render() {
+    return (
+      <main>
+        <BeastModalComponent
+          showModal={this.state.showModal}
+          handleModalClose={this.handleModalClose}
+          imageUrl={this.state.imageUrl}
+        />
+        <Container>
+          <Row>
+            {this.props.beasts.map(beast =>
+              <BeastColumn
+                key={beast.image_url}
+                beast={beast}
+                handleModalClick={this.handleModalClick}
+              />)
+            }
+          </Row>
+        </Container>
+      </main>
+    );
+  }
 }

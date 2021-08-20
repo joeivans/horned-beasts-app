@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'react-bootstrap/Image';
+import {Button, Card} from 'react-bootstrap';
 
 
 export class HornedBeasts extends React.Component {
@@ -11,27 +11,32 @@ export class HornedBeasts extends React.Component {
     };
   }
 
-  favoriteClickHandler = () =>
+  handleModalClick = (event) => {
+    this.props.handleModalClick(event);
+  };
+
+  handleFavoriteClick = () =>
     this.setState({
       favoriteCount: this.state.favoriteCount + 1,
     });
 
-  renderFavorite() {
-    return this.state.favoriteCount;
-  }
-
   render() {
-    'use strict';
     return (
-      <>
-        <h2>{this.props.title}</h2>
-        <Image thumbnail onClick={this.favoriteClickHandler}
-               title={this.props.title}
-               src={this.props.imageUrl}
-               alt={this.props.altText}/>
-        <p>{this.props.description}</p>
-        <span>&#9829; {this.renderFavorite()}</span>
-      </>
+      <Card style={{width: '18rem'}}>
+        <Card.Img
+          src={this.props.imageUrl}
+          title={this.props.title}
+          alt={this.props.altText}
+          variant="top"
+          onClick={this.handleModalClick}
+        />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+          <Button variant="primary"
+                  onClick={this.handleFavoriteClick}><span>&#9829; Likes: {this.state.favoriteCount}</span></Button>
+        </Card.Body>
+      </Card>
     );
   }
 }

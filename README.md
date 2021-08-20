@@ -11,9 +11,9 @@ ___
 
 Number and name of feature: 4 Display a modal<br/>
 Estimate of time needed to complete: 1h30m<br/>
-Start time: 21:29<br/>
-Finish time: <br/>
-Actual time needed to complete: <br/>
+Start time: 20:30<br/>
+Finish time: 23:34<br/>
+Actual time needed to complete: 3h4m<br/>
 ___
 
 ### Feature - Add Bootstrap
