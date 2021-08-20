@@ -54,7 +54,7 @@ export class Main extends React.Component {
   render() {
     return (
       <main>
-        <HornFilterComponent />
+        <HornFilterComponent onChange={this.handleBeastChange}/>
         <BeastModalComponent
           showModal={this.state.showModal}
           handleModalClose={this.handleModalClose}
