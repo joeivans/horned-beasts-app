@@ -7,6 +7,8 @@ import HornFilterComponent from './hornFilterComponent';
 
 
 export class Main extends React.Component {
+  'use strict';
+
   constructor(props) {
     super(props);
 
@@ -14,6 +16,7 @@ export class Main extends React.Component {
       showModal: false,
       modalImageUrl: '',
       modalTitle: '',
+      hornPredicate: '*',
     };
   }
 
