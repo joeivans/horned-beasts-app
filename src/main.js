@@ -3,6 +3,7 @@ import {Container} from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import {BeastColumn} from './beastColumn';
 import BeastModalComponent from './beastModalComponent';
+import HornFilterComponent from './hornFilterComponent';
 
 
 export class Main extends React.Component {
@@ -33,6 +34,7 @@ export class Main extends React.Component {
   render() {
     return (
       <main>
+        <HornFilterComponent />
         <BeastModalComponent
           showModal={this.state.showModal}
           handleModalClose={this.handleModalClose}

@@ -2,6 +2,7 @@ import {Button, Container, Image, Modal} from 'react-bootstrap';
 
 
 export default function BeastModalComponent(props) {
+  'use strict';
 
   return (
     <Modal size={'xl'}
