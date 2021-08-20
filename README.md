@@ -7,6 +7,15 @@
 
 ___
 
+### Feature - Filter the cards by horns
+
+Number and name of feature: 5 Filter by horns<br/>
+Estimate of time needed to complete: 4h00m<br/>
+Start time: 22:30(Th), 07:00(Fr)<br/>
+Finish time: 23:00(Th), 10:19(Fr)<br/>
+Actual time needed to complete: 3h49m<br/>
+___
+
 ### Feature - Display a modal
 
 Number and name of feature: 4 Display a modal<br/>
