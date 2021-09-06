@@ -10,25 +10,30 @@
     "node": true
   },
   "rules": {
+    "strict": [
+      "warn",
+      "global"
+    ],
     "eol-last": "error",
     "eqeqeq": [
       "error",
       "always"
     ],
     "indent": [
-      "warn",
+      "off",
       2
     ],
-    "new-cap": "warn",
+    "new-cap": "error",
     "no-console": "off",
     "no-multi-spaces": [
-      "warn",
+      "off",
       {
         "exceptions": {
           "VariableDeclarator": true
         }
       }
     ],
+    "no-new-func": "error",
     "no-redeclare": [
       "error",
       {
@@ -38,6 +43,7 @@
     "no-template-curly-in-string": "error",
     "no-trailing-spaces": "warn",
     "no-undefined": "off",
+    "prefer-const": "error",
     "quotes": [
       "warn",
       "single",
