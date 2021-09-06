@@ -12,7 +12,7 @@ export function HornedBeast(props) {
   }
 
   function handleFavoriteClick() {
-    props.handleFavoriteClick();
+    props.handleFavoriteClick(props.title);
   }
 
   return (

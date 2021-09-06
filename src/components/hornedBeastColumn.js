@@ -13,6 +13,7 @@ export function HornedBeastColumn(props) {
                    altText={props.beast.keyword}
                    handleModalClick={props.handleModalClick}
                    handleFavoriteClick={props.handleFavoriteClick}
+                   favoriteCount={props.favoriteCount}
       />
     </Col>);
 }
